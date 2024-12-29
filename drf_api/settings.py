@@ -51,7 +51,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'https://content-sharing-platform-a296effdf373.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'content-sharing-platform-a296effdf373.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'https://content-sharing-platform-a296effdf373.herokuapp.com',
 ]
