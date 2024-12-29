@@ -3,16 +3,19 @@ from pathlib import Path
 import os
 import dj_database_url
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 if os.path.exists('env.py'):
     import env
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [(
@@ -50,7 +53,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'drf_api.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net',
+    'https://8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'https://drf-api.herokuapp.com',
 ]
 
 # Application definition
