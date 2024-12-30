@@ -50,7 +50,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'content-sharing-platform-a296effdf373.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = [
@@ -65,7 +65,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'corsheaders',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -75,6 +74,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
 
 
     # Allauth
@@ -100,14 +100,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
-CORS_ALLOWED_ORIGIN = [
-    'https://3000-noahdr17-moments-dec0qcvfqnf.ws.codeinstitute-ide.net/'
-
-]
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https:\/\/.*\.codeinstitute-ide\.net$",
-    r"^http://localhost:3000$",
-]
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^https:\/\/.*\.codeinstitute-ide\.net$",
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 
