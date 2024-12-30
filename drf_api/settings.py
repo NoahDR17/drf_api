@@ -65,10 +65,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'corsheaders',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'corsheaders',
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
@@ -100,13 +100,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+CORS_ALLOWED_ORIGINS = [
+    'https://3000-noahdr17-moments-dec0qcvfqnf.ws.codeinstitute-ide.net',
+    r"^https:\/\/.*\.codeinstitute-ide\.net$",
+    r"^http:\/\/localhost:3000$",  
+]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https:\/\/.*\.codeinstitute-ide\.net$",
-        r"^http:\/\/localhost:3000$",
-    ]
+# CORS_ALLOW_ALL_ORIGINS = True    
 CORS_ALLOW_CREDENTIALS = True
+
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+    # CORS_ALLOWED_ORIGIN_REGEXES = [
+        # r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        # r"^http:\/\/localhost:3000$",
+    # ]
 
 ROOT_URLCONF = 'drf_api.urls'
 
