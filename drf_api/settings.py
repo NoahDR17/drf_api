@@ -50,7 +50,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-noahdr17-drfapi-54tky1hcjgx.ws.codeinstitute-ide.net', 'content-sharing-platform-a296effdf373.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = [
