@@ -68,13 +68,13 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'corsheaders',
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
-    'corsheaders',
 
 
     # Allauth
@@ -101,11 +101,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https:\/\/.*\.codeinstitute-ide\.net$",
-    ]
-
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_api.urls'
