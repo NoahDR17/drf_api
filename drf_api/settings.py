@@ -103,7 +103,8 @@ MIDDLEWARE = [
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        r"^http:\/\/localhost:3000$",
     ]
 CORS_ALLOW_CREDENTIALS = True
 
