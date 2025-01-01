@@ -1,5 +1,7 @@
 from dj_rest_auth.serializers import UserDetailsSerializer
 from rest_framework import serializers
+from rest_auth.models import TokenModel
+import sys  
 
 
 class CurrentUserSerializer(UserDetailsSerializer):
@@ -12,14 +14,14 @@ class CurrentUserSerializer(UserDetailsSerializer):
         )
 
 
-# class TokenSerializer(serializers.ModelSerializer):
-#     """
-#     Serializer for Token model.
-#     """
-#     user = UserDetailsSerializer(many=False, read_only=True) 
-#     print("IveCalled")
-#     sys.stdout.flush()
+class TokenSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Token model.
+    """
+    user = UserDetailsSerializer(many=False, read_only=True) 
+    print("IveCalled")
+    sys.stdout.flush()
 
-#     class Meta:
-#         model = TokenModel
-#         fields = ('key', 'user')
+    class Meta:
+        model = TokenModel
+        fields = ('key', 'user')
