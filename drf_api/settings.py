@@ -40,12 +40,15 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
-REST_AUTH_SERIALIZERS = {
+# REST_AUTH_SERIALIZERS = {
+#     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer',
+#     'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
+# }
+
+REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer',
     'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
 }
-# REST_AUTH = {
-# }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
