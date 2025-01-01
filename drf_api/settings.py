@@ -47,7 +47,7 @@ JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer',
-    'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
+    # 'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
 }
 
 # Quick-start development settings - unsuitable for production
