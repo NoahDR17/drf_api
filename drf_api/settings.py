@@ -42,7 +42,7 @@ JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer',
-    'TOKEN_SERIALIZER': 'Project.path.to.TokenSerializer',
+    'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
 }
 
 # Quick-start development settings - unsuitable for production
