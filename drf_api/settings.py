@@ -44,6 +44,8 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer',
     'TOKEN_SERIALIZER': 'drf_api.serializers.TokenSerializer',
 }
+# REST_AUTH = {
+# }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
