@@ -10,3 +10,14 @@ class CurrentUserSerializer(UserDetailsSerializer):
         fields = UserDetailsSerializer.Meta.fields + (
             'profile_id', 'profile_image'
         )
+
+
+class TokenSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Token model.
+    """
+    user = UserInfoSerializer(many=False, read_only=True) 
+
+    class Meta:
+        model = TokenModel
+        fields = ('key', 'user')
