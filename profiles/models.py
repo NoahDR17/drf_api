@@ -12,7 +12,8 @@ class Profile(models.Model):
     content = models.TextField(blank=True)
     image = CloudinaryField(
         'image',
-        default='samples/default_profile_fhledc'
+        default='samples/default_profile_fhledc',
+        blank=True
     )
 
 
