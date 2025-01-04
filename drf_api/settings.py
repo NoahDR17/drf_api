@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if os.path.exists('env.py'):
     import env
 STORAGES = {
-            "staticfiles": {"BACKEND": "cloudinary_storage.storage.StaticCloudinaryStorage"},
+            "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
             "default": {"BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage"},
         }
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
@@ -20,7 +20,7 @@ STORAGES = {
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
-# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
