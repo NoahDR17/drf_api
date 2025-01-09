@@ -122,6 +122,8 @@ MIDDLEWARE = [
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https:\/\/.*\.codeinstitute-ide\.net$",
+         r"^https:\/\/moments-proj-fc5321aa27e8\.herokuapp\.com\/?$",
+
     ]
 
 CORS_ALLOW_CREDENTIALS = True
